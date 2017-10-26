@@ -23,8 +23,7 @@ public class MainPage extends BasePage {
         return new MainPage(driver);
     }
 
-    public YouthPage openYouthPage(){
+    public void openYouthPage(){
         youthBtn.click();
-        return new YouthPage(driver);
     }
 }

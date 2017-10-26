@@ -15,8 +15,7 @@ public class YouthPage extends BasePage {
         this.driver = driver;
     }
 
-    public ProtectPage openProtectPage(){
+    public void openProtectPage() throws InterruptedException{
         protectBtn.click();
-        return new ProtectPage(driver);
     }
 }

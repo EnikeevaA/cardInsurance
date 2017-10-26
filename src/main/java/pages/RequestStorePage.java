@@ -58,7 +58,7 @@ public class RequestStorePage extends BasePage {
     @FindBy(xpath = "//SPAN[@ng-show='tryNext && myForm.$invalid'][text()='Заполнены не все обязательные поля']")
     private WebElement validationError;
 
-    public RequestStorePage fillRequest(){
+    public void fillRequest(){
         fillField(surname,"Иванов");
         fillField(name,"Иван");
         fillField(middlename,"Иванович");
@@ -71,10 +71,9 @@ public class RequestStorePage extends BasePage {
         fillField(regAddress_street_kladrInput,"улица");
         fillField(regAddress_house,"1");
         continueBtn.click();
-        return this;
     }
 
-    public RequestStorePage checkInputDate(){
+    public void checkInputDate(){
         checkFieldText(surname,"Иванов");
         checkFieldText(name,"Иван");
         checkFieldText(middlename,"Иванович");
@@ -86,6 +85,5 @@ public class RequestStorePage extends BasePage {
         checkFieldText(regAddress_street_kladrInput,"улица");
         checkFieldText(regAddress_house,"1");
         checkFieldText(validationError,"Заполнены не все обязательные поля");
-        return this;
     }
 }

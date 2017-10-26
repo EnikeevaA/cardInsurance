@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProtectPage extends BasePage {
-    @FindBy(xpath = "//*[contains(text(),'Оформить оналайн')]")
+    @FindBy(xpath = "//*[contains(text(),'Оформить онлайн')]")
     private WebElement storeBtn;
 
     public ProtectPage(WebDriver driver) {
@@ -17,10 +17,7 @@ public class ProtectPage extends BasePage {
         this.driver = driver;
     }
 
-    public StorePage openStorePage(){
-        Wait<WebDriver> wait = new WebDriverWait(driver, 5, 1000);
-        wait.until(ExpectedConditions.visibilityOf(storeBtn));
+    public void openStorePage()throws InterruptedException{
         storeBtn.click();
-        return new StorePage(driver);
     }
 }
